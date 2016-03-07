@@ -23,6 +23,24 @@ Both algorithms implemented in Python and accelerated using numba are present in
 
 Several implementations of the BMW-Vallado algorithm are freely available on the Internet as the companion software of Vallado's book\footnote{http://celestrak.com/software/vallado-sw.asp}, and the Fortran version was incorporated in poliastro 0.2 and distributed under the same terms with explicit permission of the author (see \ref{sec:interface} for discussion on calling Fortran functions from Python). In poliastro 0.3 the algorithm was translated to Python and accelerated with numba.
 
+\begin{lstlisting}[language=Python]
+while count < numiter:
+    y = norm_r0 + norm_r + A * (psi * c3(psi) - 1) / c2(psi)**.5
+    # ...
+    xi = np.sqrt(y / c2(psi))
+    tof_new = (xi**3 * c3(psi) + A * np.sqrt(y)) / np.sqrt(k)
+
+    if np.abs((tof_new - tof) / tof) < rtol:  # Convergence check
+        break
+    else:
+        count += 1
+        if tof_new <= tof:  # Bisection check
+            psi_low = psi
+        else:
+            psi_up = psi
+        psi = (psi_up + psi_low) / 2
+\end{lstlisting}
+
 % I should add a table and/or a figure here with these results
 
 \subsubsection{Izzo algorithm}
