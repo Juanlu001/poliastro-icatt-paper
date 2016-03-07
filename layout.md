@@ -4,4 +4,3 @@ python.tex
 interfaces.tex
 development.tex
 conclusions.tex
-acknowledgements.tex
