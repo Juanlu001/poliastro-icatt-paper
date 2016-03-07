@@ -11,7 +11,7 @@ In the following sections we analyze some alternatives that have been put in pla
 
 \subsection{Just-in-time compilation using numba}
 
-As discussed earlier, while it is possible to use NumPy to vectorize certain kinds of numerical operations, there might be other cases where this may not be feasible and where the dynamic nature of Python leads to a performance penalty, specially when the algorithm involves several levels of nested looping. To overcome these limitations we used \verb|numba|, an open source library which can infer types for array-oriented and math-heavy Python code and generate optimized machine code using the LLVM compiler infrastructure\cite{numba}.
+As discussed earlier, while it is possible to use NumPy to vectorize certain kinds of numerical operations, there might be other cases where this may not be feasible and where the dynamic nature of Python leads to a performance penalty, specially when the algorithm involves several levels of nested looping. To overcome these limitations we used \verb|numba|, an open source library which can infer types for array-oriented and math-heavy Python code and generate optimized machine instructions using the LLVM compiler infrastructure\cite{numba}.
 
 \subsection{Benchmarks against Fortran}
 
