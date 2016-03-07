@@ -1,7 +1,7 @@
 \section{Development approach}
 \label{sec:development}
 
-\verb|poliastro| relies on well-tested, community-backed libraries for low level astronomical tasks, such as astropy\cite{Robitaille2013} and jplephem. In this section we comment the positive outcomes of the new open development strategies and the permissive, commercial-friendly licenses omnipresent in the scientific Python ecosystem.
+\verb|poliastro| relies on well-tested, community-backed libraries for low level astronomical tasks, such as astropy\cite{Robitaille2013} and jplephem. The library Orekit is another successful example of a software project developed in the open in the Astrodynamics community\cite{pommier2010orekit}. In this section we comment the positive outcomes of the new open development strategies and the permissive, commercial-friendly licenses omnipresent in the scientific Python ecosystem.
 
 \subsection{Free/Open Source software}
 
@@ -9,13 +9,13 @@ Software licensing is usually an underestimated topic that should not be taken l
 
 Open source software has a long history, with its roots dating back to the creation of the Free Sofware movement in the mid eighties\cite{Stallman:1985:GM}. A distinction is often made between "open source" and "free", in that the latter requires derivative works and linking programs to be released under the same license (which is often referred to as the "viral" nature of such licenses, see\cite{stallman2009viewpoint}). For obvious reasons, this distinction has profound implications on the commercial availability of the software.
 
-Fortunately, the open source culture dominates in the scientific Python community, and is therefore safe to assume that most numerical Python libraries can be reused in commercial, closed source products\footnote{http://nipy.sourceforge.net/software/license/johns\_bsd\_pitch.html}. This is an important advantage, since it means that companies usually do not have to worry about licensing or linking issues regarding their products, as long as they ship the proper citations and disclaimers. It also poses a great challenge for open source maintainers, since commercial users do not always contribute code back and non-commercial users often feel entitled to ask for features to be developed for free. The question on how to make open source software sustainable is still open and research is ongoing, and requires a deep implication of the stakeholders.
+Fortunately, the open source culture dominates in the scientific Python community, and is therefore safe to assume that most numerical Python libraries can be reused in commercial, closed source products\footnote{http://nipy.sourceforge.net/software/license/johns\_bsd\_pitch.html}. This is an important advantage, since it means that companies usually do not have to worry about licensing or linking issues regarding their products, as long as they ship the proper citations and disclaimers. It also poses a great challenge for open source maintainers, since commercial users do not always contribute code back and non-commercial users often feel entitled to ask for features to be developed for free. The question on how to make open source software sustainable is still open and research is ongoing, and requires a deep implication of the stakeholders\cite{Shah_2006}.
 
 \subsection{Open Development}
 
 For some scientific software packages it is common practice to upload new releases to a website or FTP directory to make them available to users, while there is no public list of open issues and they have to be privately reported to a private email address. That is the case with the Standards of Fundamental Astronomy (SOFA) Software Collection.
 
-However, many other software projects follow a more open approach, with various degrees of adoption and success, which we will refer to as "Open Development"\footnote{https://opendevelopmentmethod.org/}. Among the characteristics of this approach we can name:
+The value of open source software cannot be overstated: some studies suggest that, under certain circumstances, open source software will be of higher quality than the equivalent closed source counterpart\cite{Kuan}. However, as some have pointed out, for smaller projects it might not be viable to just publish releases when they are ready\cite{Prli__2012}. Many software projects follow a more open approach, with various degrees of adoption and success, which we will refer to as "Open Development"\footnote{https://opendevelopmentmethod.org/}. Among the characteristics of this approach we can name:
 
 \begin{itemize}
 \item Carrying development discussions on public mailing lists,
@@ -26,4 +26,4 @@ However, many other software projects follow a more open approach, with various 
 \item Embracing democratic and transparent decision making processes, with a focus on diversity and safety
 \end{itemize}
 
-The benefits of this approach to commercial development practices are being studied\footnote{http://paypal.github.io/InnerSourceCommons/}.
+The benefits of these development practices to commercial or hybrid projects have been studied (see \cite{Mockus_2002}), and some companies have started public debates to explore their viability\footnote{http://paypal.github.io/InnerSourceCommons/}. We therefore encourage astrodynamicists and private companies to engage in the discussion and explore novel ways of developing software for higher quality and better reuse.
