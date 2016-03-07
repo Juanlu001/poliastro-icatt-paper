@@ -1,4 +1,12 @@
 \section{Interface with compiled languages}
 \label{sec:interface}
 
-We present tools and libraries to use code written in compiled languages such as Fortran, C/C++, Java or MATLAB from Python.
+We present tools and libraries to use code written in compiled languages such as Fortran, C/C++, Java and MATLAB from Python.
+
+\subsection{C and C++: \verb|ctypes| and \verb|CFFI|}
+
+\subsection{Fortran: \verb|f2py|}
+
+Although we could use an intermediate C wrapper to easily call Fortran code using the ISO C binding capabilities introduced in version 2003, there is no reliable way of doing this with Fortran 95 and earlier due to the lack of standardization. To solve this problem, specially for FORTRAN 77 code, the \verb|f2py| project was created in the early days of the scientific Python community, which wraps FORTRAN 77 and a subset of Fortran 95 directly in Python\cite{peterson2009f2py}.
+
+\subsection{Others: Java, MATLAB}
