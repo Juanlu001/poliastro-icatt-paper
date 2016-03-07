@@ -5,8 +5,17 @@ While we promote the advantages of Python as a numerical computing language, we 
 
 \subsection{C and C++: ctypes, Cython, SWIG, CFFI}
 
+Because of its historical importance and the fact that CPython, the reference Python implementation, is written in C, there are many projects that serve to communicate Python and C.
+
 \subsection{Fortran: f2py}
 
 Although we could use an intermediate C wrapper to easily call Fortran code using the ISO C binding capabilities introduced in version 2003, there is no reliable way of doing this with Fortran 95 and earlier due to the lack of standardization. To solve this problem, specially for FORTRAN 77 code, the \verb|f2py| project was created in the early days of the scientific Python community, which wraps FORTRAN 77 and a subset of Fortran 95 directly in Python\cite{peterson2009f2py}.
 
 \subsection{Others: Java, MATLAB}
+
+As we already said for the Fortran case, once we have solved the problem of the interoperability with C we could easily write intermediate wrappers to many other languages, as C is \textit{lingua franca} in the computing world. Fo the case of Java and MATLAB there are some tools that can help the developers with some parts of the process.
+
+\begin{itemize}
+\item The Orekit Python wrapper, which allows using the Orekit Java library from a Python program, uses \verb|JCC| (http://lucene.apache.org/pylucene/jcc/). According to its website, \verb|JCC| is "a C++ code generator that produces a C++ object interface wrapping a Java library via Java's Native Interface (JNI)". Besides, "\verb|JCC| also generates C++ wrappers that conform to Python's C type system making the instances of Java classes directly available to a Python interpreter".
+\item Regarding the MATLAB environment, the most modern alternative is \verb|pymatbridge|(https://arokem.github.io/python-matlab-bridge/), a communication layer between MATLAB and Python based on the \verb|ZeroMQ| socket library\cite{hintjens2013zeromq}. An equivalent tool for the GNU Octave project\cite{eaton1997gnu}, which allows running MATLAB-like programs using only free software, is \verb|oct2py|(https://github.com/blink1073/oct2py). The latter had been successfully tested in poliastro 0.1 before the Octave code was replaced by Fortran subroutines\footnote{https://github.com/poliastro/poliastro/tree/0.1.x}.
+\end{itemize}
