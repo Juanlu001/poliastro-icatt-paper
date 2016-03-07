@@ -3,15 +3,15 @@
 
 The Python programming language was started by Guido van Rossum in 1989 as a successor to the ABC language, and v1.0 was released in 1994\footnote{http://python-history.blogspot.com.es/2009/01/brief-timeline-of-python.html}. It is therefore not new, and in fact it predates the Java language, first released in 1996. On the other hand, Python first uses for scientific purposes appeared as early as 1995, with the creation of a special interest group on numerical arrays\cite{Millman_2011}. However, in recent times the ecosystem has greatly improved, with the application of Open Development principles (see \ref{sec:development} for further discussion), the increasing interest and involvement of private companies and the generous funds given to projects like IPython\cite{Perez_2007} and Jupyter. Nowadays, it is one of the most used languages in fields like Astronomy\cite{2015arXiv150703989M} and small-to-medium Data Science, and heavily trusted for teaching undergraduate Computer Science in top universities\cite{guo2014python}.
 
-%but it is often criticized for its suboptimal performance and lack of type enforcement.
+One of the most important differences between Python and compiled languages like Fortran or C is its dynamic typing nature. The variety of type systems across the existing programming languages has traditionally been a major source of debate among programmers, and in fact some studies suggest that there is "a small but significant relationship between language class and defects"\cite{Ray2014}. Languages featuring dynamic typing, as it is the case with Python, are often easier to write and read but more difficult to debug, as there are no guarantees about the types of the arguments. While there is an increasing interest in developing type inference systems (see for instance the Julia and Scala languages), these are extremely difficult to set up for languages like Python \cite{cannon2005localized}.
 
-\subsection{Language features}
+% Add some examples here showing that Python is slow, comparing with numpy should be enough
 
-%\subsection{Vectorizing operations with NumPy}  % Should this be a subsection?
+In the following sections we analyze some alternatives that have been put in place to overcome these limitations without greatly affecting the philosophy of the language.
 
 \subsection{Just-in-time compilation using numba}
 
-As we have seen in previous sections, while it is possible to use NumPy to vectorize certain kinds of numerical operations, there might be other cases where this is not possible and where the dynamic nature of Python leads to a performance penalty, specially when the algorithm involves several levels of nested looping. To overcome these limitations we used \verb|numba|, an open source library which takes array-oriented and math-heavy Python code and generates optimized machine code using the LLVM compiler infrastructure\cite{numba}.
+As we have seen in previous sections, while it is possible to use NumPy to vectorize certain kinds of numerical operations, there might be other cases where this is not possible and where the dynamic nature of Python leads to a performance penalty, specially when the algorithm involves several levels of nested looping. To overcome these limitations we used \verb|numba|, an open source library which can infer types for array-oriented and math-heavy Python code and generate optimized machine code using the LLVM compiler infrastructure\cite{numba}.
 
 \subsection{Benchmarks against Fortran}
 
@@ -50,3 +50,10 @@ while count < numiter:
 For the preparation of this paper, we also implemented the Izzo algorithm.
 
 \subsection{Gradual typing}
+
+The second one involves adding gradual types to the language, which can be written to a separate file.
+
+\begin{lstlisting}[language=Python]
+def greeting(name: str) -> str:
+    return 'Hello ' + name
+\end{lstlisting}
