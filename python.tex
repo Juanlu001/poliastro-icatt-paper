@@ -25,7 +25,7 @@ Both algorithms implemented in Python and accelerated using \verb|numba| are pre
 
 Several implementations of the BMW-Vallado algorithm are freely available on the Internet as the companion software of Vallado's book\footnote{http://celestrak.com/software/vallado-sw.asp}, and the Fortran version was incorporated in \verb|poliastro| v0.2 and distributed under the same terms with explicit permission of the author (see \ref{sec:interface} for discussion on calling Fortran functions from Python). In \verb|poliastro| v0.3 the algorithm was translated to Python and accelerated with \verb|numba|.
 
-\begin{lstlisting}[basicstyle=\ttfamily\footnotesize,language=Python]
+\begin{lstlisting}[language=Python]
 while count < numiter:
     y = norm_r0 + norm_r + A * (psi * c3(psi) - 1) / c2(psi)**.5
     # ...
@@ -53,7 +53,7 @@ For the preparation of this paper, we also implemented the Izzo algorithm.
 
 The second one involves adding gradual types to the language, which can be written to a separate file.
 
-\begin{lstlisting}[basicstyle=\ttfamily\footnotesize,language=Python]
+\begin{lstlisting}[language=Python]
 def greeting(name: str) -> str:
     return 'Hello ' + name
 \end{lstlisting}
