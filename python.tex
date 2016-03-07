@@ -51,7 +51,9 @@ For the preparation of this paper, we also implemented the Izzo algorithm.
 
 \subsection{Gradual typing}
 
-The second one involves adding gradual types to the language, which can be written to a separate file.
+%We have already discussed the avantages of using \verb|numba| to accelerate numerical Python code. We have also seen that whether we manually specify the expected types of our functions or let the computer automatically infer them, in both cases there is some sort of type enforcement, which on the other hand is not part of the language itself and does not support its complete set of features. Python 3.5 introduced a new provisional module adding \textit{type hints} (also known as \textit{gradual typing}), which represent a similar idea. While this new feature has, to our knowledge, not been explored to help accelerating Python code yet, it can already be used by some Integrated Development Environments (IDEs) to supply more useful information to the developer and definitely has the potential to serve a similar purpose than \verb|numba|.
+
+% Rewrite the above
 
 \begin{lstlisting}[language=Python]
 def greeting(name: str) -> str:
