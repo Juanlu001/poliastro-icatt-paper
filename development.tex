@@ -1,8 +1,18 @@
 \section{Development approach}
 \label{sec:development}
 
-Open source is no longer enough, and we argue it should be superseded by open development.
+\verb|poliastro| relies on well-tested, community-backed libraries for low level astronomical tasks, such as astropy\cite{Robitaille2013} and jplephem. In this section we comment the positive outcomes of the new open development strategies and the permissive, commercial-friendly licenses omnipresent in the scientific Python ecosystem.
 
-poliastro relies on well-tested, community-backed libraries for low level astronomical tasks, such as astropy\cite{Robitaille2013} and jplephem. We comment the positive outcomes of the new open development strategies and the permissive, commercial-friendly licenses omnipresent in the scientific Python ecosystem.
+\subsection{Free/Open Source software}
+
+Open source software has a long history, with its roots dating back to the creation of the Free Sofware movement in the mid eighties\cite{Stallman:1985:GM}. A distinction is often made between "open source" and "free", in that the latter requires derivative works and linking programs to be released under the same license (which is often referred to as the "viral" nature of such licenses, see\cite{stallman2009viewpoint}). For obvious reasons, this distinction has profound implications on the commercial availability of the software. In any case, we narrow here our treatment to those licenses that comply with the Open Source Definition, created by the Open Source Initiative\footnote{https://opensource.org/osd}.
+
+Software licensing is usually an underestimated topic that should not be taken lightly for the reasons explained above. In particular, some surveys suggest that a high percentage of the software available on the Internet has no license whatsoever\footnote{http://www.theregister.co.uk/2013/04/18/github_licensing_study/}, which, under modern copyright law, might mean the opposite of what original authors intended\footnote{https://opensource.com/law/13/8/github-poss-licensing}.
+
+Fortunately, the open source mentality dominates in the scientific Python community, and is therefore safe to assume that most numerical Python libraries can be reused in commercial, closed source products\footnote{http://nipy.sourceforge.net/software/license/johns_bsd_pitch.html}.
+
+\subsection{Open development}
+
+Open source is no longer enough, and we argue it should be superseded by open development.
 
 In fact, recent activity in this area suggests a shift from a mere publication of program sources to a complete process of developing in the open\footnote{https://speakerdeck.com/astrofrog/astropy-and-the-open-source-revolution-in-astronomy}\footnote{https://opendevelopmentmethod.org/} and the benefits of this approach to commercial development practices is being studied\footnote{http://paypal.github.io/InnerSourceCommons/}.
