@@ -52,6 +52,7 @@ if __name__ == '__main__':
     df = aggregate_data()
 
     sns.set(style="whitegrid")
+    plt.rc("font", family="serif")
 
     fig, axes = plot_benchmark(df[df["test"] == "test_lambert_single_rev_vallado"],
                                sharex=False, figsize=(12, 3))
