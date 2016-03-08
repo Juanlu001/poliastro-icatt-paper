@@ -13,6 +13,20 @@ In the following sections we analyze some alternatives that have been put in pla
 
 As discussed earlier, while it is possible to use NumPy to vectorize certain kinds of numerical operations, there might be other cases where this may not be feasible and where the dynamic nature of Python leads to a performance penalty, specially when the algorithm involves several levels of nested looping. To overcome these limitations we used \verb|numba|, an open source library which can infer types for array-oriented and math-heavy Python code and generate optimized machine instructions using the LLVM compiler infrastructure\cite{numba}.
 
+% http://tex.stackexchange.com/a/86901/2488
+\newsavebox\myv
+
+\begin{lrbox}{\myv}\begin{minipage}{\textwidth}
+\input{examples/annotations.tex}
+\end{minipage}\end{lrbox}
+
+% This is for code http://tex.stackexchange.com/a/34065/2488
+\begin{figure*}
+  \centering
+    \resizebox{\textwidth}{!}{\usebox\myv}
+  \caption{Fragment of numba annotations in poliastro.}
+\end{figure*}
+
 \subsection{Benchmarks against Fortran}
 
 To test the suitability of Python and \verb|numba| for writing expensive mathematical algorithms in terms of performance and legibility we compare two algorithms for solving Lambert's problem: a simple bisection iteration over an universal variable as presented in \cite{bate1971fundamentals} and \cite{vallado2001fundamentals} (from now on, referred to as BMW-Vallado algorithm) and the more recent algorithm by \cite{Izzo2014}, based on a Householder iteration scheme over a Lambert-invariant variable (see \cite{gooding1990procedure} for the definition). These two algorithms are very different in nature: the former favors a simple approach that is robust and simple to implement, while the latter employs clever analytical transformations and a higher order root finding method to converge in very few iterations, hence using fewer function evaluations. Also, the former works only for single revolution solutions, whereas the latter can also find solutions corresponding to multiple revolutions.
