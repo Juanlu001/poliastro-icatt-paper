@@ -1,9 +1,0 @@
-.LBB0_14:
-	movabsq	$numba_gamma, %r13
-	movabsq	$.LCPI0_3, %rax
-	vmovsd	(%rax), %xmm0
-	callq	*%r13
-	vxorpd	%xmm1, %xmm1, %xmm1
-	vucomisd	%xmm1, %xmm0
-	jne	.LBB0_15
-	jnp	.LBB0_2
