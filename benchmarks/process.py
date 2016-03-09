@@ -45,6 +45,28 @@ def plot_benchmark(df, **fig_kwargs):
     return fig, (ax1, ax2)
 
 
+def plot_benchmark_izzo(df, **fig_kwargs):
+    fig, ax1 = plt.subplots(1, **fig_kwargs)
+
+    sns.boxplot(x="time", y="test", hue="warmup", data=df[df["jit"] == True],
+                orient="h", showfliers=False, palette="YlOrRd_d",
+                ax=ax1)
+    ax1.set(xlabel='Time, JIT enabled ($\mu s$)', ylabel='Test')
+    ax1.set_xlim(120.0, 220.0)
+    ax1.legend(loc='center left', title="warmup")
+
+    ax2 = ax1.twiny()
+
+    sns.boxplot(x="time", y="test", hue="warmup", data=df[df["jit"] == False],
+                orient="h", showfliers=False, palette="PuBuGn_d",
+                ax=ax2)
+    ax2.set(xlabel='Time, JIT disabled ($\mu s$)', ylabel='Test')
+    ax2.set_xlim(200.0, 300.0) 
+    ax2.legend(loc='center right', title="warmup")
+
+    return fig, ax1
+
+
 def plot_benchmark_vallado(df, **fig_kwargs):
     fig, ax1 = plt.subplots(1, **fig_kwargs)
 
@@ -83,9 +105,9 @@ if __name__ == '__main__':
     fig.tight_layout()
     fig.savefig("benchmark_vallado.pdf")
 
-    fig, axes = plot_benchmark(df[(
+    fig, axes = plot_benchmark_izzo(df[(
         (df["test"] == "test_lambert_single_rev_izzo") |
         (df["test"] == "test_lambert_multi_rev_izzo")
-    )], sharex=True, figsize=(12, 4))
+    )], figsize=(12, 2.5))
     fig.tight_layout()
     fig.savefig("benchmark_izzo.pdf")
