@@ -30,9 +30,11 @@ def main():
 
         sol1, = izzo._lambert(k, r0, r, tof, 0, 35, 1e-8)
 
+    return sol1
+
 
 if __name__ == '__main__':
     t_start = time.process_time()
-    main()
+    print(main())
     t_end = time.process_time()
     print((t_end - t_start), N_CASES / (t_end - t_start))
